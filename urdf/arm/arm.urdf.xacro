@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="scara_arm" params="parent *origin">
+
+    <joint name="scara_base_link_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="scara_base_link"/>
+    </joint>
+
+    <link name="scara_base_link">
+      <inertial>
+        <inertia ixx="0.07917" ixy="0.00000" ixz="0.00000" iyy="0.07917" iyz="0.00000" izz="0.15625"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision name="scara_base_collision">
+        <geometry>
+          <cylinder radius="0.25" length="0.05"/>
+        </geometry>
+      </collision>
+      <visual name="scara_base">
+        <material name="Material.007"/>
+        <geometry>
+          <cylinder radius="0.25" length="0.05"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="scara_arm_1_link_joint" type="revolute">
+      <limit lower="-2.27" upper="4.17" effort="10.0" velocity="1.0"/>
+      <origin xyz="0.0 0.0 0.52512" rpy="0 0 0"/>
+      <parent link="scara_base_link"/>
+      <child link="scara_arm_1_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="scara_arm_1_link">
+      <inertial>
+        <inertia ixx="0.42083" ixy="0.0" ixz="0.0" iyy="0.42083" iyz="0.0" izz="0.025"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <cylinder radius="0.1" length="1.0"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <cylinder radius="0.1" length="1.0"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="scara_arm_2_link_joint" type="fixed">
+      <origin xyz="0.45675 0.45526 0.39791" rpy="0 0 -0.7854"/>
+      <parent link="scara_arm_1_link"/>
+      <child link="scara_arm_2_link"/>
+    </joint>
+
+    <link name="scara_arm_2_link">
+      <inertial>
+        <inertia ixx="0.95417" ixy="0.0" ixz="0.0" iyy="0.03333" iyz="0.0" izz="0.95417"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <box size="0.2 1.5 0.2"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <box size="0.2 1.5 0.2"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="scara_arm_3_link_joint" type="revolute">
+      <limit lower="-1.2" upper="4.3" effort="10.0" velocity="1.0"/>
+      <origin xyz="0.0 0.64991 0.2" rpy="0 0 0"/>
+      <parent link="scara_arm_2_link"/>
+      <child link="scara_arm_3_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="scara_arm_3_link">
+      <inertial>
+        <inertia ixx="0.03333" ixy="0.0" ixz="0.0" iyy="0.95417" iyz="0.0" izz="0.95417"/>
+        <origin rpy="0 0 0" xyz="0.65015 0 0"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision>
+        <origin xyz="0.65015 0 0"/>
+        <geometry>
+          <box size="1.5 0.2 0.2"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0.65015 0 0"/>
+        <material name="Material.007"/>
+        <geometry>
+          <box size="1.5 0.2 0.2"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="Cylinder_rotational_joint" type="revolute">
+      <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.0"/>
+      <origin xyz="1.26955 0 1.51933" rpy="0 0 0.7854"/>
+      <parent link="scara_arm_3_link"/>
+      <child link="Cylinder_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="Cylinder_link"/>
+
+    <joint name="Cylinder_vertical_joint" type="prismatic">
+      <limit lower="-1.5" upper="1.1" effort="10.0" velocity="1.0"/>
+      <origin xyz="0 0 -1.39867" rpy="0 0 0"/>
+      <parent link="Cylinder_link"/>
+      <child link="Cylinder_link.001"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="Cylinder_link.001">
+      <inertial>
+        <inertia ixx="0.9401" ixy="0.0" ixz="0.0" iyy="0.9401" iyz="0.0" izz="0.0125"/>
+        <origin rpy="0 0 0" xyz="0 0 0.003"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <mesh filename="package://rover_description/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <mesh filename="package://rover_description/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="base_gripper_joint" type="fixed">
+      <origin xyz="0 0 -1.57568" rpy="0 0 0"/>
+      <parent link="Cylinder_link.001"/>
+      <child link="base_gripper_link"/>
+    </joint>
+
+    <link name="base_gripper_link">
+      <inertial>
+        <inertia ixx="0.20521" ixy="0.0" ixz="0.0" iyy="0.03854" iyz="0.0" izz="0.24167"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <box size="0.3 0.7 0.05"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <box size="0.3 0.7 0.05"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left_grip_joint" type="prismatic">
+      <limit lower="0.0" upper="0.07" effort="10.0" velocity="1.0"/>
+      <origin xyz="0 -0.325 -0.17515" rpy="0 0 0"/>
+      <parent link="base_gripper_link"/>
+      <child link="left_grip_link"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="left_grip_link">
+      <inertial>
+        <inertia ixx="0.03854" ixy="0.0" ixz="0.0" iyy="0.03854" iyz="0.0" izz="0.075"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="2.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <box size="0.3 0.05 0.3"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <box size="0.3 0.05 0.3"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right_grip_joint" type="prismatic">
+      <limit lower="-0.07" upper="0.0" effort="10.0" velocity="1.0"/>
+      <origin xyz="0 0.3248 -0.17515" rpy="0 0 0"/>
+      <parent link="base_gripper_link"/>
+      <child link="right_grip_link"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="right_grip_link">
+      <inertial>
+        <inertia ixx="0.03854" ixy="0.0" ixz="0.0" iyy="0.03854" iyz="0.0" izz="0.075"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="2.0"/>
+      </inertial>
+      <collision>
+        <geometry>
+          <box size="0.3 0.05 0.3"/>
+        </geometry>
+      </collision>
+      <visual>
+        <material name="Material.007"/>
+        <geometry>
+          <box size="0.3 0.05 0.3"/>
+        </geometry>
+      </visual>
+    </link>
+
+  </xacro:macro>
+
+  <material name="Material.007">
+    <color rgba="0.6 0.6 0.6 1.0"/>
+  </material>
+
+</robot>

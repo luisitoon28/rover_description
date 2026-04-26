@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="Envase" params="parent *origin">
+
+    <joint name="Envase_link_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="Envase_link"/>
+    </joint>
+
+    <link name="Envase_link">
+      <collision name="envase_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00388 0.31708 0.12258"/>
+      <geometry>
+        <box size="1.94000 0.07000 0.35000"/>
+      </geometry>
+      </collision>
+      <collision name="envase_collision.001">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00388 -0.30814 0.12258"/>
+        <geometry>
+          <box size="1.94000 0.07000 0.35000"/>
+        </geometry>
+      </collision>
+      <collision name="envase_collision.002">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.93970 0.00532 0.12258"/>
+        <geometry>
+          <box size="0.07000 0.55000 0.35000"/>
+        </geometry>
+      </collision>
+      <collision name="envase_collision.003">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.32024 0.00532 0.12258"/>
+        <geometry>
+          <box size="0.05000 0.55000 0.35000"/>
+        </geometry>
+      </collision>
+      <collision name="envase_collision.004">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.30432 0.00532 0.12258"/>
+        <geometry>
+          <box size="0.05000 0.55000 0.35000"/>
+        </geometry>
+      </collision>
+      <collision name="envase_collision.005">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.93254 0.00532 0.12258"/>
+        <geometry>
+          <box size="0.07000 0.55000 0.35000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="1.39088" ixy="-0.00000" ixz="0.00231" iyy="9.35663" iyz="0.00000" izz="10.27551"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00182 0.00000 0.14544"/>
+        <mass value="30.00000"/>
+      </inertial>
+      <visual name="Envase">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00471 0.00000"/>
+        <geometry>
+          <mesh filename="package://rover_description/meshes/dae/Cube.020.dae" scale="0.97000 0.35000 0.05000"/>
+        </geometry>
+      </visual>
+    </link>
+  </xacro:macro>
+</robot>

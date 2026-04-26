@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="robot_base">
+
+    <link name="base_footprint"/>
+
+    <joint name="base_footprint_joint" type="fixed">
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 1.2" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_link">
+      <collision name="chasis_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.05491 -0.59562 -0.76184"/>
+      <geometry>
+        <box size="3.20000 0.10000 0.90000"/>
+      </geometry>
+      </collision>
+      <collision name="chasis_collision.001">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.08278 -0.02106 -0.05185"/>
+        <geometry>
+          <box size="3.00000 1.00000 0.70000"/>
+        </geometry>
+      </collision>
+      <collision name="chasis_collision.002">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.71391 -0.02883 0.49815"/>
+        <geometry>
+          <box size="0.60000 1.00000 0.40000"/>
+        </geometry>
+      </collision>
+      <collision name="chasis_collision.003">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.05491 0.56235 -0.76184"/>
+        <geometry>
+          <box size="3.20000 0.10000 0.90000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="155.51313" ixy="0.29579" ixz="-3.95758" iyy="456.61426" iyz="-0.74765" izz="404.59665"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.07609 -0.02047 -0.07797"/>
+        <mass value="500.00000"/>
+      </inertial>
+      <visual name="chasis">
+        <origin rpy="0.00000 -0.78540 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <mesh filename="package://rover_description/meshes/dae/Cube.011.dae" scale="0.05000 0.05250 0.05000"/>
+        </geometry>
+      </visual>
+    </link>
+  </xacro:macro>
+</robot>

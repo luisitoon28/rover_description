@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  
+  <xacro:macro name="Axis" params="prefix parent *origin">
+  <joint name="${prefix}_Axis_link_joint" type="fixed">
+    <xacro:insert_block name="origin" />
+    <parent link="${parent}"/>
+    <child link="${prefix}_axis_link"/>
+  </joint>
+
+  <link name="${prefix}_axis_link">
+    <collision name="${prefix}_axis_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_description/meshes/dae/Cube.001.dae" scale="0.05000 0.13500 0.05000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.03454" ixy="0.00000" ixz="0.00000" iyy="0.00833" iyz="0.00000" izz="0.03454"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="5.00000"/>
+    </inertial>
+    <visual name="${prefix}_axis_visual">
+      <material name="Material.014"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="0.10000 0.27000 0.10000"/>
+      </geometry>
+    </visual>
+  </link>
+
+  </xacro:macro>
+
+  <material name="Material.014">
+    <color rgba="0.28235 0.28235 0.28235 1.00000"/>
+  </material>
+</robot>
