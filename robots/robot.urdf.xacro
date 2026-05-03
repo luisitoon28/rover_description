@@ -6,6 +6,8 @@
   <xacro:include filename="$(find rover_description)/urdf/wheels/rover_wheel.urdf.xacro"/>
   <xacro:include filename="$(find rover_description)/urdf/wheels/axis.urdf.xacro"/>
   <xacro:include filename="$(find rover_description)/urdf/arm/arm.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/sensors/imu.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/sensors/camera.urdf.xacro"/>
   
   <xacro:property name="Front_wheel_offset_x" value="1.6"/>
   <xacro:property name="Middle_wheel_offset_x" value="-0.1"/>
@@ -78,5 +80,25 @@
     <origin xyz="0.71003 -0.01046 0.71815" rpy="0 0 0"/>
   </xacro:scara_arm>
 
+  <!-- SENSORS -->
+  <xacro:imu_sensor parent="base_link"/>
+
+  <xacro:sensor_camera 
+    frame_prefix="front" 
+    parent="base_link" 
+    horizontal_fov="90" 
+    video_width="640" 
+    video_height="480">
+    <origin xyz="1.05 0 0.5" rpy="0 0 0"/>
+  </xacro:sensor_camera>
+
+  <xacro:sensor_camera 
+      frame_prefix="gripper" 
+      parent="base_gripper_link" 
+      horizontal_fov="60" 
+      video_width="640" 
+      video_height="480">
+    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+  </xacro:sensor_camera>
 
 </robot>
