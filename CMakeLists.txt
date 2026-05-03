@@ -8,7 +8,6 @@ install(DIRECTORY
   launch
   meshes
   robots
-  rviz
   urdf
   DESTINATION share/${PROJECT_NAME}
 )

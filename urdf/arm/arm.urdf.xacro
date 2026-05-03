@@ -117,17 +117,23 @@
       <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="Cylinder_link"/>
+    <link name="Cylinder_link">
+      <inertial>
+        <mass value="0.01"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+    </link>
 
     <joint name="Cylinder_vertical_joint" type="prismatic">
       <limit lower="-1.5" upper="1.1" effort="10.0" velocity="1.0"/>
       <origin xyz="0 0 -1.39867" rpy="0 0 0"/>
       <parent link="Cylinder_link"/>
-      <child link="Cylinder_link.001"/>
+      <child link="cylinder_link_001"/>
       <axis xyz="0 0 1"/>
     </joint>
 
-    <link name="Cylinder_link.001">
+    <link name="cylinder_link_001">
       <inertial>
         <inertia ixx="0.9401" ixy="0.0" ixz="0.0" iyy="0.9401" iyz="0.0" izz="0.0125"/>
         <origin rpy="0 0 0" xyz="0 0 0.003"/>
@@ -148,7 +154,7 @@
 
     <joint name="base_gripper_joint" type="fixed">
       <origin xyz="0 0 -1.57568" rpy="0 0 0"/>
-      <parent link="Cylinder_link.001"/>
+      <parent link="cylinder_link_001"/>
       <child link="base_gripper_link"/>
     </joint>
 
