@@ -141,13 +141,13 @@
       </inertial>
       <collision>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
         </geometry>
       </collision>
       <visual>
         <material name="Material.007"/>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/Cylinder.002.dae" scale="0.1 0.1 1.5"/>
         </geometry>
       </visual>
     </link>

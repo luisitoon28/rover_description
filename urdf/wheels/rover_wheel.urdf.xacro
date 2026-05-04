@@ -14,14 +14,14 @@
       <visual name="${prefix}_visual">
         <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/${mesh_file}" scale="0.05000 0.05000 0.12500"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/${mesh_file}" scale="0.05000 0.05000 0.12500"/>
         </geometry>
       </visual>
 
       <collision name="${prefix}_collision">
         <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/${mesh_file}" scale="0.05000 0.05000 0.12500"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/${mesh_file}" scale="0.05000 0.05000 0.12500"/>
         </geometry>
       </collision>
 

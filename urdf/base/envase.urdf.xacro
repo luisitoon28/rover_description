@@ -54,7 +54,7 @@
       <visual name="Envase">
         <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00471 0.00000"/>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/Cube.020.dae" scale="0.97000 0.35000 0.05000"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/Cube.020.dae" scale="0.97000 0.35000 0.05000"/>
         </geometry>
       </visual>
     </link>

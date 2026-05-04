@@ -44,7 +44,7 @@
       <visual name="chasis">
         <origin rpy="0.00000 -0.78540 0.00000" xyz="0.00000 0.00000 0.00000"/>
         <geometry>
-          <mesh filename="package://rover_description/meshes/dae/Cube.011.dae" scale="0.05000 0.05250 0.05000"/>
+          <mesh filename="file://$(find rover_description)/meshes/dae/Cube.011.dae" scale="0.05000 0.05250 0.05000"/>
         </geometry>
       </visual>
     </link>
