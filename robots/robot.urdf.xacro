@@ -120,5 +120,4 @@
   <!-- Esta es la llamada que activa todo el sistema de control -->
   <xacro:ros2_control/>
 
-
 </robot>

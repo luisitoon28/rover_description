@@ -28,8 +28,9 @@
       </visual>
     </link>
 
+    <!-- Articulación 1: Rotación Hombro -->
     <joint name="scara_arm_1_link_joint" type="revolute">
-      <limit lower="-2.27" upper="4.17" effort="1000.0" velocity="10.0"/>
+      <limit lower="-2.27" upper="4.17" effort="1000.0" velocity="10.0" acceleration="5.0"/>
       <origin xyz="0.0 0.0 0.52512" rpy="0 0 0"/>
       <parent link="scara_base_link"/>
       <child link="scara_arm_1_link"/>
@@ -80,8 +81,9 @@
       </visual>
     </link>
 
+    <!-- Articulación 3: Rotación Codo -->
     <joint name="scara_arm_3_link_joint" type="revolute">
-      <limit lower="-1.2" upper="4.3" effort="1000.0" velocity="10.0"/>
+      <limit lower="-1.2" upper="4.3" effort="1000.0" velocity="10.0" acceleration="5.0"/>
       <origin xyz="0.0 0.64991 0.2" rpy="0 0 0"/>
       <parent link="scara_arm_2_link"/>
       <child link="scara_arm_3_link"/>
@@ -109,8 +111,9 @@
       </visual>
     </link>
 
+    <!-- Articulación 4: Rotación Muñeca -->
     <joint name="Cylinder_rotational_joint" type="revolute">
-      <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="10.0"/>
+      <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="10.0" acceleration="5.0"/>
       <origin xyz="1.26955 0 1.51933" rpy="0 0 0.7854"/>
       <parent link="scara_arm_3_link"/>
       <child link="Cylinder_link"/>
@@ -125,8 +128,9 @@
       </inertial>
     </link>
 
+    <!-- Articulación 5: Movimiento Vertical (Prismático) -->
     <joint name="Cylinder_vertical_joint" type="prismatic">
-      <limit lower="-1.5" upper="1.1" effort="1000.0" velocity="10.0"/>
+      <limit lower="-1.5" upper="1.1" effort="1000.0" velocity="10.0" acceleration="2.0"/>
       <origin xyz="0 0 -1.39867" rpy="0 0 0"/>
       <parent link="Cylinder_link"/>
       <child link="cylinder_link_001"/>
@@ -177,8 +181,9 @@
       </visual>
     </link>
 
+    <!-- Articulación 6: Dedo Izquierdo -->
     <joint name="left_grip_joint" type="prismatic">
-      <limit lower="0.0" upper="0.07" effort="1000.0" velocity="10.0"/>
+      <limit lower="0.0" upper="0.07" effort="1000.0" velocity="10.0" acceleration="2.0"/>
       <origin xyz="0 -0.325 -0.17515" rpy="0 0 0"/>
       <parent link="base_gripper_link"/>
       <child link="left_grip_link"/>
@@ -204,8 +209,9 @@
       </visual>
     </link>
 
+    <!-- Articulación 7: Dedo Derecho -->
     <joint name="right_grip_joint" type="prismatic">
-      <limit lower="-0.07" upper="0.0" effort="1000.0" velocity="10.0"/>
+      <limit lower="-0.07" upper="0.0" effort="1000.0" velocity="10.0" acceleration="2.0"/>
       <origin xyz="0 0.3248 -0.17515" rpy="0 0 0"/>
       <parent link="base_gripper_link"/>
       <child link="right_grip_link"/>
