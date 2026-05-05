@@ -3,8 +3,10 @@
 
   <xacro:macro name="robot_base">
 
+    <!-- Enlace en el suelo: fíjate que se cierra con /> al final -->
     <link name="base_footprint"/>
 
+    <!-- Unión fija entre el suelo y el chasis -->
     <joint name="base_footprint_joint" type="fixed">
       <parent link="base_footprint"/>
       <child link="base_link"/>
@@ -13,10 +15,10 @@
 
     <link name="base_link">
       <collision name="chasis_collision">
-      <origin rpy="0.00000 0.00000 0.00000" xyz="0.05491 -0.59562 -0.76184"/>
-      <geometry>
-        <box size="3.20000 0.10000 0.90000"/>
-      </geometry>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.05491 -0.59562 -0.76184"/>
+        <geometry>
+          <box size="3.20000 0.10000 0.90000"/>
+        </geometry>
       </collision>
       <collision name="chasis_collision.001">
         <origin rpy="0.00000 0.00000 0.00000" xyz="-0.08278 -0.02106 -0.05185"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="rover_diff_drive">
+  <xacro:macro name="ros2_control">
     
     <!-- 1. EL PLUGIN PRINCIPAL (El que carga ros2_control en Gazebo) -->
     <!-- IMPORTANTE: Solo puede haber uno de estos en todo el robot. Si ya lo tienes en el brazo, no lo repitas -->
     <gazebo>
       <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-        <parameters>$(find rover_moveit_config)/config/ros2_controllers.yaml</parameters>
+        <parameters>$(find robot_moveit_config)/config/ros2_controllers.yaml</parameters>
       </plugin>
     </gazebo>
 

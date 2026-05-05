@@ -1,6 +1,7 @@
 controller_manager:
   ros__parameters:
     update_rate: 20  # Hz
+    use_sim_time: true
 
     rover_base_control:
       type: diff_drive_controller/DiffDriveController
@@ -31,9 +32,9 @@ rover_base_control:
     
     wheel_separation_multiplier: 1.0
     left_wheel_radius_multiplier: 1.0
-    right_wheel_radius_multiplier: -1.0 # Invertido según el anexo
+    right_wheel_radius_multiplier: 1.0 # Invertido según el anexo
 
-    base_frame_id: base_link
+    base_frame_id: base_footprint
     enable_odom_tf: true
 
     publish_limited_velocity: true
@@ -63,6 +64,7 @@ scara_controller:
     state_interfaces:
       - position
       - velocity
+      - effort
 
 # Configuración de la pinza (Gripper)
 gripper_controller:
@@ -75,3 +77,4 @@ gripper_controller:
     state_interfaces:
       - position
       - velocity
+      - effort
