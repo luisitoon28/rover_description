@@ -77,6 +77,16 @@
     <origin xyz="0 -${Axis_to_wheel_offset_y} 0" rpy="${pi/2} 0 0"/>
   </xacro:rover_wheel>
 
+  <!-- Fricción para ruedas izquierdas -->
+  <gazebo reference="front_left_wheel_link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  <gazebo reference="middle_left_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2></gazebo>
+  <gazebo reference="back_left_wheel_link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+
+  <!-- Fricción para ruedas derechas -->
+  <gazebo reference="front_right_wheel_link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  <gazebo reference="middle_right_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2></gazebo>
+  <gazebo reference="back_right_wheel_link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+
   <!-- ARM --> 
   <xacro:scara_arm parent="base_link">
     <origin xyz="0.71003 -0.01046 0.71815" rpy="0 0 0"/>

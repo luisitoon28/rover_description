@@ -7,7 +7,7 @@
       <xacro:insert_block name="origin" />
       <parent link="${parent}"/>
       <child link="${prefix}_wheel_link"/>
-      <axis xyz="0 0 1"/> <limit effort="10.0" velocity="1.0"/>
+      <axis xyz="0 0 -1"/> <limit effort="200.0" velocity="10.0"/>
     </joint>
 
     <link name="${prefix}_wheel_link">
@@ -31,6 +31,16 @@
         <inertia ixx="1.29049" ixy="0.0" ixz="0.0" iyy="2.27308" iyz="0.0" izz="1.29044"/>
       </inertial>
     </link>
+
+    <gazebo reference="${prefix}_wheel_link">
+      <mu1>1.0</mu1>
+      <mu2>0.1</mu2>
+      <kp>1000000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>0.1</maxVel>
+      <fdir1>1 0 0</fdir1>
+    </gazebo>
     
   </xacro:macro>
 </robot>
