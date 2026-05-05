@@ -93,7 +93,10 @@
   </xacro:scara_arm>  
 
   <!-- SENSORS -->
-  <xacro:imu_sensor parent="base_link"/>
+  <xacro:sensor_imu prefix="imu" parent="base_link">
+    <!-- Aquí defines la posición física de la IMU respecto al parent -->
+    <origin xyz="1.0 0.0 0.5" rpy="0 0 0"/>
+  </xacro:sensor_imu>
 
   <xacro:sensor_camera 
     frame_prefix="front" 
@@ -110,7 +113,7 @@
       horizontal_fov="60" 
       video_width="640" 
       video_height="480">
-    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.05" rpy="0 1.5708 0"/>
   </xacro:sensor_camera>
 
   <!-- Controlador Gazebo ros2  -->
