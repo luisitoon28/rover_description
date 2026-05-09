@@ -4,29 +4,29 @@ Práctica realizada por Jose Luis Laria
 
 ## 0. Capturas Rviz
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/captura_rviz/captura_rviz.png
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/captura_rviz/captura_rviz.png
  "Captura rviz")
 
 ## 1. Capturas Simulación
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/capturas_simulacion/Captura_gazebo.png "Gazebo")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/Captura_gazebo.png "Gazebo")
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/capturas_simulacion/cubo_verde.png  "Cogiendo el cubo verde")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/cubo_verde.png  "Cogiendo el cubo verde")
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/capturas_simulacion/cubo_verde_2.png  "Cogiendo el cubo verde")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/cubo_verde_2.png  "Cogiendo el cubo verde")
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/capturas_simulacion/dejando_cubo_verde.png  "Dejando el cubo verde")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/dejando_cubo_verde.png  "Dejando el cubo verde")
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/capturas_simulacion/dejando_cubo_azul.png  "Dejando el cubo verde")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/dejando_cubo_azul.png  "Dejando el cubo verde")
 
 
 ## 2. Árbol de transformadas
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/arbol_tf/arbol_tf "Árbol de tfs")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/arbol_tf/frames.png "Árbol de tfs")
 
 ## 3. Gráficas
 
-![alt text](https://github.com/luisitoon28/rover_description/tree/main/entrega/graficas/Figure_1.png "Logo de GitHub")
+![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/graficas/Figure_1.png "Logo de GitHub")
 
 ## 4. Explicación gráficas
 
@@ -45,4 +45,4 @@ Como podemos observar el gasto se mantiene siempre a cero, esto se tiene que deb
 
 ## 5. Enlace rosbag
 
-https://drive.google.com/drive/folders/1kwHtYVWY_hUZ6L6eUPIMp7N4rGzGuf8L?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto 
+[rosbag](https://drive.google.com/drive/folders/1kwHtYVWY_hUZ6L6eUPIMp7N4rGzGuf8L?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto)
