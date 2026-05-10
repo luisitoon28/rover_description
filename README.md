@@ -9,6 +9,8 @@ Práctica realizada por Jose Luis Laria
 
 ## 1. Capturas Simulación
 
+Al dejar el cubo en azul encima del rojo, al no estar en el centro al abrir la pinza y subir el scara, este se cayó.
+
 ![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/Captura_gazebo.png "Gazebo")
 
 ![alt text](https://github.com/luisitoon28/rover_description/blob/main/entrega/capturas_simulacion/cubo_verde.png  "Cogiendo el cubo verde")
